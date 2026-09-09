@@ -1,1 +1,2 @@
-"Simple online PortFolio for my resume.\n I'm an third year electronics student in Bordeaux, France" 
+"Simple online PortFolio for my resume.
+I'm an third year electronics student in Bordeaux, France"
