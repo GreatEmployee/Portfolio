@@ -1,0 +1,442 @@
+@font-face {
+font-family : "Libre Baskerville";
+src : url(https://d3syewzhvzylbl.cloudfront.net/fonts/google-fonts/librebaskerville/regular.woff2) format('woff2');
+}
+
+@font-face {
+font-family : "Indie Flower";
+src : url(https://d3syewzhvzylbl.cloudfront.net/fonts/google-fonts/indieflower/regular.woff2) format('woff2');
+}
+
+@font-face {
+font-family : "Nothing You Could Do";
+src : url(https://d3syewzhvzylbl.cloudfront.net/fonts/google-fonts/nothingyoucoulddo/regular.woff2) format('woff2');
+}
+
+@font-face {
+font-family : "Satisfy";
+src : url(https://d3syewzhvzylbl.cloudfront.net/fonts/google-fonts/satisfy/regular.woff2) format('woff2');
+}
+
+
+html::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+html {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+@keyframes menuShadow{
+    from {
+        color: rgba(var(--dark-color), 0);
+    }
+    85% {
+        color: rgba(var(--dark-color), 0);
+    }
+}
+header > div {
+    animation: menuShadow 7s;
+}
+
+.menu > a, .menu > div{
+    opacity: 1;
+    transition: opacity ease-in-out 500ms calc(6.5s + sibling-index() * 100ms), color ease-in-out var(--transition-delay);
+    @starting-style {
+      opacity: 0;
+    }
+}
+
+body {
+    overflow: hidden;
+    margin:0px;
+    min-height: 100vh;
+}
+
+#presentationSection {
+    height: 100vh;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    align-content: center;
+}
+
+
+#presentationSection div {
+    display: flex;
+}
+
+@keyframes backgroundFade{
+    from {
+        opacity: 0;
+    }
+    66% {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.BgCanvas {
+    animation: backgroundFade 7s;
+}
+
+#TitleDiv {
+    margin: auto;
+    height: 80vh;
+}
+
+#TitleDiv strong{--shadow-width : 1.2rem;}
+#TitleDiv h1{--shadow-width : 0.8rem;}
+#TitleDiv h2{--shadow-width : 0.5rem;}
+
+#TitleDiv strong, h1, h2{
+    --shadow-color : rgba(var(--light-color), 1);
+    paint-order: stroke fill;
+    -webkit-text-stroke: var(--shadow-width) var(--shadow-color);
+    -webkit-text-stroke-color: var(--shadow-color);
+}
+
+@keyframes blink{
+    from {opacity: 0;}
+    50% {opacity: var(--opacity);}
+    to {opacity: 0;}
+}
+
+#TitleDiv > div > svg {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: 50vw;
+    transform: translate(-50%);
+    stroke: rgb(var(--dark-color));
+    bottom: 0px;
+    margin-bottom: calc(2vh + 20px * sibling-index());
+    opacity: 0;
+    margin-top: auto;
+    animation: blink 0.65s infinite;
+    animation-delay: calc(7.3s - 100ms * sibling-index());
+}
+
+@keyframes kyotoImageFade{
+    from {
+        opacity: 0;
+    }
+    85% {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+#KyotoImage {
+    position: absolute;
+    margin-left: auto;
+    right: 52vw;
+
+    height: 80vh;
+    --rotation-x : 0;
+    --rotation-y : 0;
+    --position-x : 0;
+    --position-y : 0;
+    border-radius: 5vw;
+    transform: rotateY(var(--rotation-y)) rotateX(var(--rotation-x));
+    color: rgb(var(--dark-color));
+    box-shadow: var(--position-x) var(--position-y);
+
+    opacity: 1;
+    transition: color ease-in-out var(--transition-delay);
+    animation: kyotoImageFade 6.5s;
+}
+
+#TitleDiv > div:has(#title){
+    position: absolute;
+    display: grid;
+    text-align: left;
+    left: 52vw;
+    top: 50vh;
+    transform: translate(0px, -50%);
+    margin: auto;
+    width: 45%;
+    height: 50%;
+}
+
+#TitleDiv strong {
+    font-size: 15vh;
+    margin-top: auto;
+    font-weight: lighter;
+    transition: -webkit-text-stroke-color ease-in-out var(--transition-delay)
+}
+
+@keyframes nameFade{
+    from {
+        opacity: 0;
+        margin-left: 30vh;
+    }
+    73%{
+        opacity: 0;
+        margin-left: 30vh;
+    }
+    74%{
+        opacity: 1;
+        margin-left: 30vh;
+    }
+    to {
+        opacity: 1;
+    }
+}
+#name {
+    font-size: 14vh;
+    line-height: 8vh;
+    font-weight: bolder;
+    margin-bottom: 5vh;
+    margin-left: 0vh;
+    color: rgb(var(--dark-color));
+    opacity: 1;
+    transition: color ease-in-out var(--transition-delay), -webkit-text-stroke-color ease-in-out var(--transition-delay);
+    animation: nameFade 3s;
+}
+
+@keyframes bumpName {
+    from {
+        margin-left: 0vw;
+    }
+    50% {
+        margin-left: 3vw;
+    }
+}
+#name span > span {
+    margin-left: 0vw;
+    filter: none;
+    animation: bumpName 0.5s calc(2.2s + 30ms * sibling-index());
+}
+
+#name span#initial {
+    font-size: 120%;
+}
+#name span#initial, #name span#firstname {
+    font-family : "Nothing You Could Do";
+}
+
+@keyframes nameSlider{
+    from {
+        height: 0vh;
+        opacity: 1;
+        margin-left: -20%;
+        box-shadow: -2px 0px;
+    }
+    65% {
+        height: 28vh;
+        opacity: 1;
+        margin-left: -20%;
+        box-shadow: -2px 0px;
+    }
+    75% {
+        box-shadow: -8px 0px;
+        margin-left: -25%;
+    }
+    90% {
+        opacity: 1;
+        box-shadow: -8px 0px;
+    }
+    to {
+        box-shadow: -2px 0px;
+        opacity: 0;
+    }
+}
+
+#name + div{
+    z-index: 5;
+    background-color: rgb(var(--light-color));
+    color: rgb(var(--nameslider-color));
+    box-shadow: -2px 0px;
+    height: 28vh;
+    opacity: 0;
+    bottom: 0px;
+    transform: translate(0px, -100%);
+    margin-bottom: -100%;
+    left: 0px;
+    margin-right: -10%;
+    margin-left: 110%;
+    animation: nameSlider 2s 1s;
+    transition: background-color ease-in-out var(--transition-delay), color ease-in-out var(--transition-delay), width ease-out 2s;
+}
+
+@keyframes statusFade{
+    from {
+        opacity: 0;
+    }
+    85% {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+#status {
+    font-size: 2vh;
+
+    opacity: 1;
+    color: rgb(var(--dark-color));
+    transition: color ease-in-out var(--transition-delay), -webkit-text-stroke-color ease-in-out var(--transition-delay);
+    animation: statusFade 4s;
+}
+
+
+@keyframes titleFade{
+    from {
+        opacity: 0;
+    }
+    83% {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+#title {
+    height: 15vh;
+    opacity: 1;
+    color: rgb(var(--dark-color));
+    transition: color ease-in-out var(--transition-delay), -webkit-text-stroke-color ease-in-out var(--transition-delay);
+    animation: titleFade 6s;
+}
+
+@keyframes animationFonts{
+    from {font-family : "Satisfy";}
+    20% {font-family : "Nothing You Could Do";}
+    45% {font-family : "Indie Flower";}
+    80% {font-family : none;}
+}
+
+#title > strong > span{
+    font-family : none;
+    animation: animationFonts 10s infinite;
+    animation-delay: mod(calc(sibling-index() * (2.1s)), 10s);
+}
+#title > strong:not(:has(span)){
+    font-family : "Libre Baskerville";
+}
+
+
+#summary {
+    height: 100vh;
+    box-shadow: rgb(var(--light-color)) 0px -30px 100px;
+    background-color: rgb(var(--light-color));
+    transition: background-color ease-in-out var(--transition-delay), box-shadow ease-in-out var(--transition-delay);
+}
+
+#summary > div{
+    margin-top: 20vh;
+    margin-left: 30vw;
+    height: 10vh;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    --rotation-x : 0;
+    --rotation-y : 0;
+    --position-x : 0;
+    --position-y : 0;
+    color: rgb(var(--dark-color));
+}
+
+@keyframes coinHover{
+    from{
+        transform: none;
+        box-shadow: none;
+    }
+    90% {
+        transform: none;
+        box-shadow: none;
+    }
+    to {transform: rotateY(var(--rotation-y)) rotateX(var(--rotation-x)) scale(5);
+    box-shadow: var(--position-x) var(--position-y);}
+}
+#summary > div:hover{
+    transform: rotateY(var(--rotation-y)) rotateX(var(--rotation-x)) scale(5);
+    box-shadow: var(--position-x) var(--position-y);
+    animation: coinHover 330ms;
+}
+
+#summary > div > div#surface {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    background-color: yellow;
+    pointer-events: none;
+    transition: transform ease-in-out 330ms;
+}
+
+#summary > div:hover > div#surface{
+    transform: rotateX(180deg);
+}
+
+#summary > div > div > img {
+    height: 70%;
+    margin: auto;
+    margin-top: 50%;
+    margin-left: 50%;
+    transform: translate(-50%, -50%) rotate(180deg);
+    aspect-ratio: 1;
+}
+
+#summary {
+    visibility: hidden;
+    height: 0px;
+}
+
+
+
+#ambitions {
+    height: 50vh;
+    display: flex;
+    align-items: center;
+}
+
+#ambitions > div{
+    width: 60vw;
+    margin: auto;
+}
+
+#ambitions > div > div{
+    margin-top: 7vh;
+    display: grid;
+}
+
+#ambitions .textbox{
+    grid-row: 2;
+    margin: auto;
+    margin-top: 0px;
+    width: 15vw;
+    background-color: #113527;
+    padding : 8%;
+    border-radius: 2vw;
+}
+
+#ambitions .textbox:first-child{
+    margin-left: 0px;
+}
+
+#ambitions .textbox:last-child{
+    margin-right: 0px;
+}
+
+#ambitions .textbox img{
+    height: 2vw;
+}
+
+#ambitions .textbox h1{
+    font-size: 1.5vw;
+}
+
+#ambitions .textbox h1, #ambitions .textbox a {
+    color: white;
+}
+
+
+.title {
+    font-size: 7vh;
+    color: rgb(var(--dark-color));
+    transition: color ease-in-out var(--transition-delay);
+}

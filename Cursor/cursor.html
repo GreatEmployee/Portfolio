@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="/Cursor/cursor.css">
+<div>
+    <div id="CursorDiv">
+        <script>
+            var cursor = document.querySelector('#CursorDiv');
+            var cursors = getComputedStyle(cursor);
+            function update(e) {
+                cursor.style.setProperty('--position-x', e.pageX.toString() + 'px');
+                cursor.style.setProperty('--position-y', e.clientY.toString() + 'px');
+            }
+            
+            window.addEventListener("pointermove", update);
+
+            var divs = document.querySelectorAll("div:not(.cursor)");
+
+            divs.forEach((div) => {
+                div.addEventListener("mouseenter", function () {
+                    cursor.style.setProperty('width', '30px');
+                });
+                div.addEventListener("mouseleave", function () {
+                    cursor.style.setProperty('width', '20px');
+                });
+            });
+        </script>
+    </div>
+</div>

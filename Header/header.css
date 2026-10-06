@@ -1,0 +1,152 @@
+body {
+    background-color: rgb(var(--light-color));
+    transition: background-color ease-in-out var(--transition-delay);
+}
+
+header {
+    position: sticky;
+    z-index:1;
+}
+
+header > div{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height: 8vh;
+    width: 100vw;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: rgb(var(--light-color));
+    
+    color: rgba(var(--dark-color), .2);
+    box-shadow:  0px 5px 50px -20px;
+
+    transition: background-color ease-in-out var(--transition-delay), color ease-in-out var(--transition-delay);
+}
+
+.menu a,.menu .dropdownBox{
+    margin: 0.8vw;
+    text-decoration: none;
+    color: rgb(var(--dark-color));
+    user-select: none;
+    font-size: 1.5rem;
+    grid-row: 1;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.menu {
+    display: grid;
+    align-content: center;   
+}
+
+header a:hover {
+    text-decoration: underline;
+    text-underline-offset: 40%;
+    text-decoration-thickness: 15%;
+    text-decoration-color: rgb(var(--dark-color));
+}
+
+/* DROPDOWN BOXES FEATURE */
+
+.menu .dropdownBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu .dropdownBox a{
+    grid-column: 1;
+    transition: color ease-in-out var(--transition-delay);
+}
+
+.menu .dropdownBox > div{
+    display: none;
+    border-radius: 3%;
+    background-color: rgb(var(--light-color));
+    box-shadow: rgba(var(--dark-color), .2) 0px 3px 10px 1px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    height: auto;
+    position: absolute;
+    transform: translate(0%, 60%);
+}
+
+.menu .dropdownBox > div a {
+    grid-column: 1;
+    grid-row: sibling-index();
+    margin-top: 8%;
+    margin-bottom: 8%;
+    font-size: 1.2rem;
+}
+
+.menu .dropdownBox:hover > div {
+    display: grid;
+    opacity: 1;
+}
+
+.menu .dropdownBox:hover > svg
+{
+    transform: rotate(180deg);
+}
+
+.menu .dropdownBox svg{
+    height: 2rem;
+    width: 2rem;
+    stroke: rgb(var(--dark-color));
+    transition: transform ease-in-out 200ms, stroke ease-in-out var(--transition-delay);
+}
+
+/* DARK MODE FEATURE */
+
+#dark-mode-button {
+    width: 5vw;
+    height: 4vh;
+    left: 1vw;
+    top: 2vh;
+    position: fixed;
+    border: solid rgb(var(--dark-color));
+    transition: border ease-in-out var(--transition-delay);
+    border-radius: 4vh;
+}
+
+#dark-mode-button #Slider {
+    height: 75%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    position: absolute;
+	top: 50%;
+    left: calc(25% + 50%*var(--dark-mode));
+	transform: translate(-50%, -50%);
+    background-color: rgb(var(--dark-color));
+    transition: left ease-in-out var(--transition-delay), background-color ease-in-out var(--transition-delay);
+}
+
+#dark-mode-button #ThemesDiv{
+    height: 100%;
+    width: 100%;
+    display: grid;
+}
+
+#dark-mode-button img{
+    margin: auto;
+    aspect-ratio: 1;
+    height: calc(min(2.5vw, 4vh) * 0.75);
+    transition: opacity ease-in-out var(--transition-delay), transform ease-in-out var(--transition-delay);
+    user-select: none;
+}
+
+#dark-mode-button #moon{
+    grid-row: 1;
+    grid-column: 1;
+    opacity: var(--dark-mode);
+    transform: rotate(calc( 90deg *(1 - var(--dark-mode)) ));
+}
+
+#dark-mode-button #sun{
+    grid-row: 1;
+    grid-column: 2;
+    opacity: calc(1 - var(--dark-mode));
+    transform: rotate(calc( -90deg *var(--dark-mode) ));
+}

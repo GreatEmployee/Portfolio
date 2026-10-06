@@ -4,10 +4,112 @@
     <meta charset="utf-8">
     <title>Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/CSS/index.css">
+    <script src="jquery.js"></script>
+    <link rel="stylesheet" href="https://pyscript.net/releases/2026.6.1/core.css" />
+    <script type="module" src="https://pyscript.net/releases/2026.6.1/core.js"></script>
+    <script src="Scripts/facingCursor.js"></script>
+    <script> 
+        $(function(){
+        $("#header").load("/Header/header.html");
+        $("#footer").load("/Footer/footer.html");
+        $("#cursor").load("/Cursor/cursor.html");
+        });
+    </script>
+    <script>
+        setTimeout(() => {
+            var body = document.querySelector('Body');
+            var bodys = getComputedStyle(body);
+            body.style.setProperty('overflow', "scroll");
+        }, 6000);
+    </script>
 </head>
     <body>
-        <h1>
-            This is a Portfolio
-        </h1>
+        <div id="cursor"></div>
+        <header id="header"></header>
+        <section id="presentationSection">
+            <script type="py" src="Scripts/HomePageBackground.py"></script>
+            <div id="TitleDiv">
+                <img id="KyotoImage" class="FacingCursor" depthz="4" shadowIntensity="40" rotationFreedom="0.5" src="/Images/KyotoTemple.jpg">
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 100 100" height="10" width="10">
+                    <g id="chevron-downward">
+                        <path id="Union" d="M15 32.5 50 67.5 85 32.5" stroke-width="10" fill="none"></path>
+                    </g>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 100 100" height="10" width="10">
+                    <g id="chevron-downward">
+                        <path id="Union" d="M15 32.5 50 67.5 85 32.5" stroke-width="10" fill="none"></path>
+                    </g>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 100 100" height="10" width="10">
+                        <g id="chevron-downward">
+                            <path id="Union" d="M15 32.5 50 67.5 85 32.5" stroke-width="10" fill="none"></path>
+                        </g>
+                    </svg>
+                </div>
+                <script>
+                    var svg = document.querySelector('#TitleDiv > div');
+                    var svgs = getComputedStyle(svg);
+                    window.addEventListener("scroll", function (e) {
+                        svg.style.setProperty('--opacity', Math.max(1 - (window.scrollY / window.innerHeight) * 8, 0));
+                    });
+                </script>
+                <div>
+                    <div id="title">
+                        <strong>Port</strong><strong class="SpanSeparation">folio</strong>
+                    </div>
+                    <h1 id="name"><span class="SpanSeparation" id="lastname">DAMBRINE</span><br /><span id="initial">A</span><span id="firstname" class="SpanSeparation">ntoine</span></h1>
+                    <div></div> 
+                    <script>
+                            var targets = document.querySelectorAll('.SpanSeparation');
+                            for (var i = 0; i < targets.length; i++) {
+                                var target = targets[i];
+                                target.innerHTML = target.innerText.replace(/./g, "<span id='" + target.id + "'>$&</span>");
+                            }
+                            
+                    </script>
+                    <h2 id="status">Etudiant en &eacute;lectronique et syst&egrave;mes embarqu&eacute;s</h2>
+                </div>
+            </div>
+        </section>
+        <section id="summary">
+            <div id="background"></div>
+            <div class="FacingCursor" depthz="1" shadowIntensity="100" rotationFreedom="0.5">
+                <div id="surface">
+                    <img src="/Images/Profil.svg"></img>
+                </div>
+            </div>
+            <h1>Competences</h1>
+            <h1>Experience pro</h1>
+            <h1>Profil</h1>
+            <h1>Projects</h1>
+            <h1>Passions</h1>
+        </section>
+        <section id="ambitions">
+            <div>
+                <strong class="title">
+                    Mes ambitions
+                </strong>
+                <div>
+                    <div class="textbox" style="padding-bottom: 10%;">
+                        <img src="/Images/Studies-Icon.png">
+                        <h1>Réussir mes études</h1>
+                        <a>Je souhaite mettre tout en oeuvre afin de finaliser mon parcours en BUT et m'ouvrir les portes d'écoles d'ingénieurs</a>
+                    </div>
+                    <div class="textbox" style="padding-bottom: 20%;">
+                        <img src="/Images/Innovation-Icon.png">
+                        <h1>Innover</h1>
+                        <a>Il est toujours important d'expérimenter les limites, c'est ma manière de penser et mon objectif professionnel</a>
+                    </div>
+                    <div class="textbox">
+                        <img src="/Images/Blossomed-Icon.png">
+                        <h1>S'épanouir</h1>
+                        <a>Devenir un adulte responsable, compétent et capable de dépasser ses propres difficultés</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer id="footer"></footer>
     </body>
 </html>

@@ -1,0 +1,31 @@
+footer {
+    margin-top: 25vh;
+    left: 0px;
+    bottom: 0px;
+    height: 15vh;
+    background-color: #113527;
+    display: flex;
+}
+
+#FooterDiv {
+    width: 60vw;
+    margin: auto;
+    display: grid;
+}
+
+#FooterDiv h1{
+    grid-column: 1;
+    color: white;
+}
+#FooterDiv div{
+    grid-column: 2;
+    display: flex;
+}
+
+#FooterDiv div a{
+    text-decoration: none;
+    color: white;
+    margin: auto;
+    margin-right: 0px;
+    margin-left: auto;
+}

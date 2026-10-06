@@ -1,0 +1,107 @@
+<header>
+    <div>
+        <link rel="stylesheet" href="/Header/header.css">
+        <div class="menu">
+            <a href="./index.html">
+                Accueil
+            </a>
+            <a>
+                Comp&eacutetences
+            </a>
+            <a>
+                A propos de moi
+            </a>
+            <a>
+                Exp&eacuteriences professionelles
+            </a>
+            <div class = 'dropdownBox'>
+                <a>
+                    Projets
+                </a>
+                <div>
+                    <a>
+                        Robotiques
+                    </a>
+                    <a>
+                        BUT
+                    </a>
+                    <a>
+                        Personnels
+                    </a>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 100 100" height="10" width="10">
+                    <g id="chevron-upward">
+                        <path id="Union" d="M15 32.5 50 67.5 85 32.5" stroke-width="10" fill="none"></path>
+                    </g>
+                </svg>
+            </div>
+            <a>
+                Passions
+            </a>
+            <a>
+                Contact
+            </a>
+        </div>
+        <div id="dark-mode-button" onclick="SwitchMode()">
+            <div id="ThemesDiv">
+                <img id="moon" src="/Images/Moon-Icon.svg">
+                <img id="sun" src="/Images/Sun-Icon.svg">
+            </div>
+            <div id="Slider">
+                <script>
+                    function InitVar(variable, defaultValue) {
+                        if (localStorage.getItem(variable) == null){
+                            localStorage.setItem(variable, defaultValue);
+                        };
+                    }
+                    InitVar("--dark-mode", "false");
+                    
+                    var r = document.querySelector(':root');
+                    var rs = getComputedStyle(r);
+
+                    r.style.setProperty('--transition-delay', "0.00001s");
+
+                    let darkMode = localStorage.getItem("--dark-mode");
+
+                    function UpdateVariables() {
+                        if (darkMode == "1"){
+                            r.style.setProperty('--light-color', "0, 0, 0");
+                            r.style.setProperty('--dark-color', "255, 255, 255");
+                            r.style.setProperty('--nameslider-color', "173, 255, 47");
+                        }else{
+                            r.style.setProperty('--light-color', "255, 255, 255");
+                            r.style.setProperty('--dark-color', "0, 0, 0");
+                            r.style.setProperty('--nameslider-color', "0, 0, 0");
+                        };
+                    };
+                    function UpdateDarkMode() {
+                        if (darkMode == "1"){
+                            r.style.setProperty('--dark-mode', '1');
+                            localStorage.setItem("--dark-mode", "1");
+                        }else{
+                            r.style.setProperty('--dark-mode', '0');
+                            localStorage.setItem("--dark-mode", "0");
+                        };
+                    };
+                    UpdateVariables();
+                    UpdateDarkMode();
+                    
+
+                    function SwitchMode() {
+                        if (darkMode == "1"){
+                            darkMode = "0";
+                        }else{
+                            darkMode = "1";
+                        };
+                        UpdateDarkMode();
+                        UpdateVariables();
+                    };
+
+                    setTimeout(function() {
+                        r.style.setProperty('--transition-delay', "330ms");
+                    }, 500);
+                </script>
+            </div>
+        </div>
+    </div>
+</header>
