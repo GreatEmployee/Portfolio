@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Portfolio Antoine DAMBRINE</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="CSS/experiences.css">
+    <script src="jquery.js"></script>
+    <link rel="stylesheet" href="https://pyscript.net/releases/2026.6.1/core.css" />
+    <script type="module" src="https://pyscript.net/releases/2026.6.1/core.js"></script>
+    <script>
+        $(function(){
+        $("#header").load("Header/header.html");
+        $("#footer").load("Footer/footer.html");
+        $("#cursor").load("Cursor/cursor.html");
+        });
+    </script>
+</head>
+<body>
+    <header id="header"></header>
+    <section id="title">
+        <strong>
+            Expériences Professionnelles
+        </strong>
+    </section>
+    <section id="mita" class="experienceSection">
+        <div class="title">
+            <h1>> Stage à <span>MitaLab</span></h1>
+            <div class="subtitle">
+                <div>
+                    <img class="invertImage4darkMode" src="Images/Clock-Icon.png">
+                    <h2>2 mois</h2>
+                </div>
+                <h2>Laboratoire de Micro-électronique / Micro-mécanique</h2>
+                <div>
+                    <img src="Images/Location-Icon.png">
+                    <h2>Université de Tokyo</h2>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <script>
+                $(document).ready(function() {
+                    const targets = document.querySelectorAll(".spanLink");
+                    for (var i=0; i < targets.length; i++){
+                        var target = targets[i];
+                        target.onclick = function() {
+                            window.open(target.getAttribute('href'), '_blank');
+                        }
+                        target.style = "cursor: pointer; text-decoration: underline";
+                    }
+                });
+            </script>
+            <div class="invertImage4darkMode" style="grid-column: 1; grid-row: 1;">
+                <img src="Images/MitaLab-Logo.png">
+            </div>
+            <div style="grid-column: 2; grid-row: 1;">
+                <a>
+                    <span class="spanLink" href="https://www.if.t.u-tokyo.ac.jp/index_en.html">MitaLab</span> est l'un des nombreux laboratoires universitaires de l'Université de Tokyo. Il regroupe des chercheurs en micro-électronique et micro-mécanique afin d'améliorer la technologie des <span class="spanLink" href="https://fr.wikipedia.org/wiki/Microsyst%C3%A8me_%C3%A9lectrom%C3%A9canique">MEMS</span> (Micro Electro-Mecanicals Systems).
+                </a>
+            </div>
+            <div style="grid-column: 1; grid-row: 2;">
+                <a>
+                    Grâce à eux, j'ai pu d'abord apprendre un procédé générique de gravure sur couche de silicium. Cette dernière servait de micro oscillateur.
+                    <br /> <br />
+                    J'ai réalisé la complexité et la quantité de temps de fabrication nécessaire à une seule puce et la fragilité de celle-ci.  
+                </a>
+            </div>
+            <div style="grid-column: 2; grid-row: 3;">
+                <a>
+                    Le laboratoire m'a exposé son besoin d'un retour quantitatif lors des procédés de rinçage de puces, en salle blanche.
+                    <br />
+                    La mission de concevoir et fabriquer un prototype de conductimètre m'a été confiée.
+                    <br /> <br />
+                    Après avoir établi le cahier des charges pour comprendre les impératifs de cet outil, j'ai établi un schéma électronique de l'appareil.
+                    <br />
+                    Composé de multiples parties : alimentation, traitement des données, mesures, interfaces utilisateurs ; L'Ohm-mètre m'a permis d'approfondir et de mettre en œuvre, pour la première fois, l'intégralité de mes connaissances en matière de conception de PCB.
+                    <br /> <br />
+                    Malgré la confiance que l'équipe m'a accordée, je réalise que ma première difficulté à dépasser était celle de l'approbation et de la certification de chacune des étapes.
+                    <br />
+                    Egalement, n'ayant pas eu accès aux produits chimiques nécessaires à l'acquisition de données de référence, j'ai du limiter mon expérimentation préliminaire.
+                </a>
+            </div>
+            <div style="grid-column: 1; grid-row: 4;">
+                <a>
+                    Pour concrétiser le concept, j'ai conçu un boitier renfermant la carte et les autres composants flottants.
+                    <br /> <br />
+                    La priorité de celui-ci devait être la rigidité et la réparabilité du système ainsi tous les éléments sont emboités et indépendants du PCB
+                    <br />
+                    J'ai réalisé avec OnShape, de multiples pièces s'emboitant pour sceller l'intégralité des pièces électroniques.
+                </a>
+            </div>
+            <div style="grid-column: 2; grid-row: 4;">
+                <img src="Images/MitaOhmMeter.png">
+            </div>
+        </div>
+    </section>
+    <footer id="footer"></footer>
+</body>
+</html>

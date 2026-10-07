@@ -1,0 +1,91 @@
+@font-face {
+font-family : "Nothing You Could Do";
+src : url(https://d3syewzhvzylbl.cloudfront.net/fonts/google-fonts/nothingyoucoulddo/regular.woff2) format('woff2');
+}
+
+h1, h2, strong, a{
+    color: rgb(var(--dark-color));
+    transition: color ease-in-out var(--transition-delay);
+}
+
+section#title{
+    height: 50vh;
+    display: flex;
+}
+
+section#title > strong{
+    align-self: center;
+    margin: auto;
+    font-size: 4rem;
+}
+
+
+
+section.experienceSection {
+    display: grid;
+}
+
+section.experienceSection > div.title{
+    margin: auto;
+    align-self: center;
+    grid-row: 1;
+    grid-column: 1;
+}
+
+section.experienceSection > div.title > h1 {
+    font-size: 3rem;
+}
+
+section.experienceSection > div.title > h1 > span{
+    position: absolute;
+    color : rgb(20, 74, 1);
+    font-family : "Nothing You Could Do";
+    font-size: 150%;
+    transform: translate(10%, -15%);
+}
+
+section.experienceSection div.subtitle {
+    display: grid;
+    grid-gap: 4vw;
+    margin-bottom: 20vh;
+}
+
+section.experienceSection div.subtitle > div{
+    display: grid;
+    grid-gap: 1vw;
+}
+
+section.experienceSection div.subtitle > *,
+section.experienceSection div.subtitle > div > * {
+    grid-row: 1;
+    align-self: center;
+    margin: auto;
+}
+
+section.experienceSection > div.title > div.subtitle > div > img{
+    height: 2vh;
+}
+
+section.experienceSection div.content {
+    display: grid;
+    width: 50vw;
+    margin-left: 50vw;
+    transform: translate(calc(-50% - 5vw));
+    grid-column-gap: 10vw;
+    grid-row-gap: 10vh;
+    font-size: 1.4rem;
+}
+
+section.experienceSection div.content a{
+    line-height: 150%;
+}
+
+section.experienceSection div.content > * {
+    align-self: center;
+    margin: auto;
+}
+
+.invertImage4darkMode {
+    filter: invert(var(--dark-mode));
+    transition: filter ease-in-out var(--transition-delay);
+}
