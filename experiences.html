@@ -17,6 +17,7 @@
     </script>
 </head>
 <body>
+    <div id="cursor"></div>
     <header id="header"></header>
     <section id="title">
         <strong>
@@ -66,6 +67,17 @@
                     J'ai réalisé la complexité et la quantité de temps de fabrication nécessaire à une seule puce et la fragilité de celle-ci.  
                 </a>
             </div>
+            <div style="grid-column: 1; grid-row: 3;" class="combinedImages">
+                <img src="Images/MitaOhmMeter_BCu.png">
+                <img src="Images/MitaOhmMeter_FCu.png">
+            </div>
+            <script>
+                const img = document.querySelector('.combinedImages > img:last-child');
+                window.addEventListener("pointermove", function (e) {
+                    console.log((e.pageY - img.getBoundingClientRect().left).toString() + "px");
+                    img.style.setProperty('--x', (img.getBoundingClientRect().right - e.pageX).toString() + "px");
+                });
+            </script>
             <div style="grid-column: 2; grid-row: 3;">
                 <a>
                     Le laboratoire m'a exposé son besoin d'un retour quantitatif lors des procédés de rinçage de puces, en salle blanche.

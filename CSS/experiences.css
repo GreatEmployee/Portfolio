@@ -68,7 +68,7 @@ section.experienceSection > div.title > div.subtitle > div > img{
 
 section.experienceSection div.content {
     display: grid;
-    width: 50vw;
+    width: 80vw;
     margin-left: 50vw;
     transform: translate(calc(-50% - 5vw));
     grid-column-gap: 10vw;
@@ -88,4 +88,41 @@ section.experienceSection div.content > * {
 .invertImage4darkMode {
     filter: invert(var(--dark-mode));
     transition: filter ease-in-out var(--transition-delay);
+}
+
+.combinedImages {display: grid;}
+
+.combinedImages img{
+    width: 100%;
+    left: 0px;
+    top: 0px;
+    margin: auto;
+    grid-column: 1;
+}
+
+.combinedImages img:first-child{
+    grid-row:1;
+    transform: translate(0px, 50%);
+}
+
+@keyframes imageSliderSwing {
+    from {clip-path: inset(0px var(--swing-offset) 0px 0px);}
+    50% { clip-path: inset(0px calc(100% - var(--swing-offset)) 0px 0px);}
+    to {clip-path: inset(0px var(--swing-offset) 0px 0px);}
+}
+
+.combinedImages img:last-child{
+    grid-row: 2;
+    z-index: 2;
+    transform: translate(0px, -50%);
+    --swing-offset: 5%;
+    animation: imageSliderSwing 4s infinite;
+    transition: clip-path ease-in 1.5s;
+    --x:0px;
+}
+
+.combinedImages:hover > img:last-child{
+    animation: none;
+    transition: none;
+    clip-path: inset(0px var(--x) 0px 0px);
 }
