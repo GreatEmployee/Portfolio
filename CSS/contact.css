@@ -1,0 +1,56 @@
+section#title {
+    height: 40vh;
+    display: flex;
+}
+
+strong {
+    font-size: 10rem;
+    margin: auto;
+}
+
+section#content {
+    height: 60vh;
+    width: 100%;
+}
+
+#cv img {
+    height: 100%;
+    margin: 0px;
+}
+
+#cv {
+    position: absolute;
+    display: inline-block;
+    margin: auto;
+    margin-left: 10vw;
+    margin-top: 30vh;
+    transform: translate(0px, -50%);
+    transition: padding-left ease-in-out 300ms;
+}
+
+#cv:hover{
+    padding-left: 10vw;
+}
+
+#cv > div {
+    height: 40vh;
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 1vw;
+    border:solid black 1px;
+
+    --rotation-x : 0;
+    --rotation-y : 0;
+    --position-x : 0;
+    --position-y : 0;
+    transition: transform ease-out 300ms, box-shadow ease-out 300ms;
+}
+
+#cv:hover > div {
+    height: 80vh;
+    border-radius: 2vw;
+    transform: rotateY(var(--rotation-y)) rotateX(var(--rotation-x));
+    color: rgb(var(--dark-color));
+    box-shadow: var(--position-x) var(--position-y);
+    transition: height ease-in-out 300ms, border-radius ease-in-out 300ms;
+}

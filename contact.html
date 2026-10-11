@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Portfolio Antoine DAMBRINE</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="CSS/contact.css">
+    <script src="jquery.js"></script>
+    <link rel="stylesheet" href="https://pyscript.net/releases/2026.6.1/core.css" />
+    <script type="module" src="https://pyscript.net/releases/2026.6.1/core.js"></script>
+    <script src="Scripts/facingCursor.js"></script>
+    <script>
+        $(function(){
+        $("#header").load("Header/header.html");
+        $("#footer").load("Footer/footer.html");
+        $("#cursor").load("Cursor/cursor.html");
+        });
+    </script>
+</head>
+<body>
+    <div id="cursor"></div>
+    <header id="header"></header>
+    <section id="title">
+        <strong>Contact</strong>
+    </section>
+    <section id="content">
+        <div id="cv">
+        <div class="FacingCursor" depthz="4" shadowIntensity="40" rotationFreedom="1">
+            <img src="Images/Resume.png">
+        </div>
+        <div id="infos">
+
+        </div>
+    </div>
+    </section>
+    <footer id="footer"></footer>
+</body>
+</html>

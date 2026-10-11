@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Portfolio Antoine DAMBRINE</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="CSS/profil.css">
+    <script src="jquery.js"></script>
+    <link rel="stylesheet" href="https://pyscript.net/releases/2026.6.1/core.css" />
+    <script type="module" src="https://pyscript.net/releases/2026.6.1/core.js"></script>
+    <script>
+        $(function(){
+        $("#header").load("Header/header.html");
+        $("#footer").load("Footer/footer.html");
+        $("#cursor").load("Cursor/cursor.html");
+        });
+    </script>
+</head>
+<body>
+    <div id="cursor"></div>
+    <header id="header"></header>
+        <div id="background">
+            <img src="Images/Me.jpg">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 100 100">
+                <g id="background-shape">
+                    <path d="M0 0 100 0 100 100 0 100" stroke-width="10" fill="black"></path>
+                </g>
+            </svg>
+        </div>
+        <div id="content">
+            <strong>A propos de moi</strong>
+            <a>
+                Né à Pontoise en 2006, j'ai ensuite effectué mes études secondaires au lycée Les Iris de Lormont en filière Maths/Physique-Chimie option Mathématiques Expertes.
+                <br><br>
+                J'ai participé à plusieurs concours de mathématiques puis je me suis intéressé à la programmation et par la suite l'électronique.
+                <br><br>
+                Entré en BUT GEII en 2024, j'ai orienté mes études vers l'électronique et les systèmes embarqués. Fort de mes résultats, j'ai eu la chance de pouvoir intégrer un laboratoire au sein de l'université de Tokyo pendant un stage de 10 semaines.
+                <br><br><span style="font-weight: bold">
+                J'ambitionne d'intégrer une école d'ingénieur spécialisée en micro-électronique ou en robotique afin de concrétiser mes objectifs professionnels.
+            </span></a>
+        </div>
+    <footer id="footer"></footer>
+    </body>
+</html>

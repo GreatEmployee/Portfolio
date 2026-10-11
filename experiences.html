@@ -52,7 +52,7 @@
                     }
                 });
             </script>
-            <div class="invertImage4darkMode" style="grid-column: 1; grid-row: 1;">
+            <div class="invertImage4darkMode" style="grid-column: 1; grid-row: span 2;">
                 <img src="Images/MitaLab-Logo.png">
             </div>
             <div style="grid-column: 2; grid-row: 1;">
@@ -60,25 +60,35 @@
                     <span class="spanLink" href="https://www.if.t.u-tokyo.ac.jp/index_en.html">MitaLab</span> est l'un des nombreux laboratoires universitaires de l'Université de Tokyo. Il regroupe des chercheurs en micro-électronique et micro-mécanique afin d'améliorer la technologie des <span class="spanLink" href="https://fr.wikipedia.org/wiki/Microsyst%C3%A8me_%C3%A9lectrom%C3%A9canique">MEMS</span> (Micro Electro-Mecanicals Systems).
                 </a>
             </div>
-            <div style="grid-column: 1; grid-row: 2;">
+            <div style="grid-column: 2; grid-row: 2;">
                 <a>
                     Grâce à eux, j'ai pu d'abord apprendre un procédé générique de gravure sur couche de silicium. Cette dernière servait de micro oscillateur.
                     <br /> <br />
                     J'ai réalisé la complexité et la quantité de temps de fabrication nécessaire à une seule puce et la fragilité de celle-ci.  
                 </a>
             </div>
-            <div style="grid-column: 1; grid-row: 3;" class="combinedImages">
+            <div style="grid-column: span 2; grid-row: 3;">
+                <div class="carousel">
+                    <img src="Images/MitaCarousel/finalChip.jpg">
+                    <img src="Images/MitaCarousel/conception.png">
+                    <img src="Images/MitaCarousel/rinse.png">
+                    <img src="Images/MitaCarousel/spinning.png">
+                    <img src="Images/MitaCarousel/lithophotography.png">
+                    <img src="Images/MitaCarousel/finalWafer.png">
+                </div>
+            </script>
+            </div>
+            <div style="grid-column: 1; grid-row: 4;" class="combinedImages">
                 <img src="Images/MitaOhmMeter_BCu.png">
                 <img src="Images/MitaOhmMeter_FCu.png">
             </div>
             <script>
                 const img = document.querySelector('.combinedImages > img:last-child');
                 window.addEventListener("pointermove", function (e) {
-                    console.log((e.pageY - img.getBoundingClientRect().left).toString() + "px");
                     img.style.setProperty('--x', (img.getBoundingClientRect().right - e.pageX).toString() + "px");
                 });
             </script>
-            <div style="grid-column: 2; grid-row: 3;">
+            <div style="grid-column: 2; grid-row: 4;">
                 <a>
                     Le laboratoire m'a exposé son besoin d'un retour quantitatif lors des procédés de rinçage de puces, en salle blanche.
                     <br />
@@ -93,7 +103,7 @@
                     Egalement, n'ayant pas eu accès aux produits chimiques nécessaires à l'acquisition de données de référence, j'ai du limiter mon expérimentation préliminaire.
                 </a>
             </div>
-            <div style="grid-column: 1; grid-row: 4;">
+            <div style="grid-column: 1; grid-row: 5;">
                 <a>
                     Pour concrétiser le concept, j'ai conçu un boitier renfermant la carte et les autres composants flottants.
                     <br /> <br />
@@ -102,7 +112,7 @@
                     J'ai réalisé avec OnShape, de multiples pièces s'emboitant pour sceller l'intégralité des pièces électroniques.
                 </a>
             </div>
-            <div style="grid-column: 2; grid-row: 4;">
+            <div style="grid-column: 2; grid-row: 5;">
                 <img src="Images/MitaOhmMeter.png">
             </div>
         </div>
