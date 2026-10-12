@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Portfolio Antoine DAMBRINE</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="CSS/projects.css">
+    <script src="jquery.js"></script>
+    <link rel="stylesheet" href="https://pyscript.net/releases/2026.6.1/core.css" />
+    <script type="module" src="https://pyscript.net/releases/2026.6.1/core.js"></script>
+    <script>
+        $(function(){
+        $("#header").load("Header/header.html");
+        $("#footer").load("Footer/footer.html");
+        $("#cursor").load("Cursor/cursor.html");
+        });
+    </script>
+</head>
+    <body>
+        <div id="cursor"></div>
+        <header id="header"></header>
+
+        <div style="height: 50vh;width: 100%;"></div>
+
+        <section id="quote">
+            <div>
+                <p>"</p>
+                <p class="spanSplit">L'être dit libre est celui qui peut réaliser ses projets.</p>
+                <p>"</p>
+            </div>
+            <p>Jean-Paul Sartre</p>
+            <script>
+                $(document).ready(function() {
+                    const spanSplit = document.querySelectorAll('.spanSplit');
+                    for(var i=0; i < spanSplit.length; i++){
+                        var target = spanSplit[i];
+                        target.innerHTML = target.innerText.replace(/./g, "<span>$&</span>");
+
+
+                        const spans = target.querySelectorAll('span');
+                        for(var s=0; s < spans.length; s++){
+                            spans[s].style.setProperty('--n',
+                                1 / (1 + Math.exp(-4*(s - spans.length/2) / spans.length))
+                            )
+                        }
+                    }
+                });
+            </script>
+        </section>
+
+        <section id="reverse" class="content">
+            <div id="separation"></div>
+            <strong id="title" class="left">Projet d'ingénierie inverse</strong>
+            <div>
+                <div class="combinedImages left">
+                    <img src="Images/reverse_after.png">
+                    <img src="Images/reverse_before.png">
+                </div>
+                <script>
+                    const img = document.querySelector('.combinedImages > img:last-child');
+                    window.addEventListener("pointermove", function (e) {
+                        img.style.setProperty('--x', (img.getBoundingClientRect().right - e.pageX).toString() + "px");
+                    });
+                </script>
+                <div class="right">
+                    <a>Après avoir racheté un ancien gadget électronique pour le recycler en un autre projet, je suis tombé sur des cartes de contrôle moteur intelligentes. Curieux de leur conception, j'ai essayé de les cloner pour en comprendre d'avantage.</a>
+                </div>
+            </div>
+            <div>
+                <div class="left">
+                    <a>
+                        Après avoir identifié les composants (ou des équivalents), j'ai pu refaire l'intégralité du circuit, y compris la partie manquante puisque selon moi cette carte est aussi utilisée pour plusieurs modèles différents afin de réduire les coûts.
+                        <br><br>
+                        Je suis actuellement en train de remettre en ordre le schéma que vous pouvez apercevoir à droite afin de découvrir de nouveaux circuits et d'apprendre.
+                        <br>
+                        La prochaine étape sera de déterminer le fonctionnement de son software.
+                    </a>
+                </div>
+                <img class="right" src="Images/reverse_schematic.png">
+            </div>
+        </section>
+        
+        <section id="smoothKeeyboard" class="content">
+            <div id="separation"></div>
+            <strong id="title" class="right">Clavier lisse DIY</strong>
+            <div>
+                <div class="left">
+                    <a>
+                        J'adore le style lisse et futuriste de certaines télécommandes.
+                        J'ai donc voulu concevoir et fabriquer un clavier unique décrit principalement par une seule fine couche lisse reposant au dessus des boutons.
+                        <br>
+                        Le projet est en cours mais je compte concevoir le modèle 3D, le PCB et le software qui vont composer ce périphérique.
+                    </a>
+                </div>
+                <img class ="right" src="Images/smoothKeyboard_preview.png">
+            </div>
+            <div>
+                <div class="right">
+                    <a>
+                        Plusieurs tests ont été faits en impression 3D avec du TPU 85a transparent. Malgré ce que pourrait laisser penser la photo ci-contre, les résultats sont plutôt satisfaisants.
+                        <br>
+                        Si les derniers tests ne sont quant à eux pas concluants, un moulage en silicone sera nécessaire.
+                        <br><br>
+                        J'ai déjà commencé la conception du PCB qui va intégrer notamment 4 matrices (une de boutons et trois de LEDS RGB) et des microcontrôleurs STM32.
+                    </a>
+                </div>
+                <img class="left" src="Images/smoothKeyboard_keytest.png">
+            </div>
+        </section>
+
+        <section id="programmation" class="content">
+            <div id="separation"></div>
+            <strong id="title" class="left">Programmation</strong>
+            <div>
+                <div class="left">
+                    <a>
+                        Depuis que j'ai découvert la programmation à l'aide d'un Arduino et de Python au collège, je n'ai jamais arrêté d'expérimenter et de créer de nombreux scripts. J'ai dressé une liste non exhaustive des domaines que j'ai testé, pour la plupart en python, que vous pouvez retrouver à droite.
+                        <br><br>
+                        Ce site est un bon exemple de projet. En le construisant, j'ai pu apprendre le HTML/CSS/JS (tout du moins les bases). Aucune IA n'a été utilisé, pour du code ou du renseignement.
+                        <br><br>
+                        Je ne prétends pas être programmeur, encore moins informaticien. Ceci ne constitue qu'une multitude de petits projets.
+                    </a>
+                </div>
+                <div class="right">
+                    <div id="details">
+                        <strong>~$ <span></span><span>|</span></strong>
+                        <strong>~$ Communication inter-appareils local |</strong>
+                    </div>
+                    <div>
+                        <div class="icon" title="Bots Discord"><img src="Images/discord-Icon.png"></div>
+                        <div class="icon" title="Python et SQLite"><img src="Images/pythonSQLite-Icon.png"></div>
+                        <div class="icon" title="Implémentation Python dans HTML"><img src="Images/pythonHTML-Icon.png"></div>
+                        <div class="icon" title="Serveur web géré par Python"><img src="Images/pythonWeb-Icon.png"></div>
+                        <div class="icon" title="Réseaux de neuronnes"><img src="Images/neuralsNetwork-Icon.png"></div>
+                        <div class="icon" title="Algorithmes de pathfinding"><img src="Images/pathfinding-Icon.png"></div>
+                        <div class="icon" title="Interfaces périphérique/logiciel"><img src="Images/ihm-Icon.png"></div>
+                        <div class="icon" title="Jeux vidéos"><img src="Images/videogames-Icon.png"></div>
+                        <div class="icon" title="Interface UI"><img src="Images/ui-Icon.png"></div>
+                        <div class="icon" title="Communication inter-appareils local"><img src="Images/wirelessCom-Icon.png"></div>
+                        <div class="icon" title="Cybersécurité"><img src="Images/rootme-Icon.png"></div>
+                        <div class="icon" title="Scraping Web"><img src="Images/scraping-Icon.png"></div>
+                        <script>
+                            $(document).ready(function() {
+                                const icons = document.querySelectorAll('#programmation .icon');
+                                const details = document.querySelector('#programmation #details > strong:first-child > span:first-child');
+                                
+                                var targetText = "";
+                                var processing = false;
+
+                                function type() {
+                                    if(details.textContent.length != targetText.length){
+                                        details.textContent = targetText.slice(0,details.textContent.length + 1);
+                                        setTimeout(type, 10);
+                                    } else {
+                                        processing = false;
+                                    }
+                                }
+
+                                function clear() {
+                                    processing = true;
+                                    if(details.textContent.length != 0){
+                                        details.textContent = details.textContent.slice(0,-1);
+                                        setTimeout(clear, 10);
+                                    } else {
+                                        type();
+                                    }
+                                }
+                                
+                                function colorPicker() {
+                                    return 155 + Math.random()*100;
+                                }
+
+                                for(var i = 0; i < icons.length; i++){
+                                    icons[i].addEventListener("mouseenter",(event) => {
+                                        targetText = "./"+event.target.title;
+                                        if(processing==false){clear();}
+                                        event.target.style.setProperty(
+                                            'background-color',
+                                            `rgb(${colorPicker()}, ${colorPicker()}, ${colorPicker()})`
+                                        );
+                                    });
+                                    icons[i].addEventListener("mouseleave", (event) => {
+                                        targetText = "";
+                                        if(processing==false){clear();}
+                                        event.target.style.setProperty(
+                                            'background-color',
+                                            'rgb(var(--light-color))'
+                                        );
+                                    });
+                                }
+                            });
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="namec" class="content">
+            <div id="separation"></div>
+            <strong id="title" class="right">NAMeC Team</strong>
+            <div>
+                <img class="icon namec" href="https://namec.fr/fr/" src="Images/namec-team-Logo.png">
+                <img class="icon linkedin" href="https://www.linkedin.com/company/namec-team" src="Images/linkedin-Logo.png">
+                <img class="icon insta" href="https://www.instagram.com/namecteam?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" src="Images/instagram-Logo.png">
+                <script>
+                    $(document).ready(function() {
+                        const imgs = document.querySelectorAll('#namec .icon');
+                        for(var i=0; i < imgs.length; i++){
+                            imgs[i].onclick = function (event) {
+                                window.open(event.target.getAttribute('href'), '_blank');
+                            }
+                        }
+                    });
+                </script>
+            </div>
+            <div>
+                <img class="left" src="Images/name-team-robocup2026.jpg">
+                <div class="right">
+                    <a>
+                        Depuis plusieurs années, notre équipe de robotique a su se faire une place parmi les équipes internationales, malgré que nous soyons à 100% des étudiants. Nous concevons, mais surtout maintenons une écurie de robots <span class="linkSpan" href="https://fr.wikipedia.org/wiki/Roue_holonome">holonomes</span>, de la structure mécanique à l'électronique embarquée, jusqu'au software qui permettra de les coordonner de manière autonome.
+                        <br></br>
+                        Les robots de la ligue SSL doivent pouvoir disputer un match de foot à 6 contre 6 sans intervention humaine (hors maintenance).
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="hackathon" class="content">
+            <div id="separation"></div>
+            <strong id="title" class="left">Hackathon Robotique 2025</strong>
+            <div>
+                <div class="left">
+                    <a>
+                        Le DU (Diplôme Universitaire) Robotique de l'IUT de Bordeaux m'a permis d'acquérir des connaissances dans des domaines autour de la robotique tels que : la modélisation 3D, l'électronique et l'informatique embarquée, les mathématiques appliquées à celle-ci (Pathfinding et Réseaux de neurones simples) et bien d'autres.
+                        <br><br>
+                        Pour conclure l'année 2025, nous avons organisé entre nous un <span class="linkSpan" href="https://fr.wikipedia.org/wiki/Hackathon">Hackathon</span>. Malgré que nous ayons déjà commencé le projet au préalable, la part la plus importante a été terminée pendant ces 2 jours.
+                        <br><br>
+                        L'objectif était de construire un robot <span class="linkSpan" href="https://fr.wikipedia.org/wiki/Roue_holonome">holonomes</span> permettant de sortir d'un labyrinthe de manière autonome. Il pouvait récupérer les informations de son environnement grâce à un LiDAR connecté à un Raspberry PI.
+                        <br><br>
+                        J'ai personnellement programmé l'entièreté du programme de récupération/traitement des données LiDAR et du contrôle moteurs.
+                        <br>
+                        J'ai pu également intégrer un retour d'informations sans fil jusqu'à un PC (visualisation de l'environnement) et un contrôle par manette sur ce dernier.
+                    </a>
+                </div>
+                <img class="right" src="Images/hackathon2025.jpg">
+            </div>
+        </section>
+
+        <section id="radiogonometry" class="content">
+            <div id="separation"></div>
+            <strong id="title" class="right">Concours RadioGoniométrique</strong>
+            <div>
+                <img class="left" src="Images/radiogonometry.jpg">
+                <div class="right">
+                    <a>
+                        La radiogoniométrie est une technique de navigation qui consiste à détecter la direction des ondes émises par une balise.
+                        <br><br>
+                        La conception et la fabrication de l'antenne ci-contre a constitué l'un des TPs de mon BUT2.
+                        <br><br>
+                        Nous avions des connaissances en radiofréquence mais la première difficulté a été de découvrir par soi-même le monde des antennes.
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="sumo" class="content">
+            <div id="separation"></div>
+            <strong id="title" class="left">Robot SUMO</strong>
+            <div>
+                <div class="left">
+                    <a>
+                        En 2ème année de BUT, nous avons relevé le défi de concevoir et fabriquer un robot suivant un cahier des charges. Celui-ci devait être capable de "combattre" (= exclure de la zone) tout objet pénétrant sur le Dohyo (= cercle de combat).
+                        <br><br>
+                        Le côté ludique du projet m'a porté, j'ai ressenti un réel plaisir à bâtir l'arborescence du programme et différentes stratégies à l'aide d'une recherche empirique.
+                        <br><br>
+                        J'aurais aimé le tester en situation de combat réel... à suivre.
+                    </a>
+                </div>
+                <img class="right" src="Images/robot-Sumo.png"> 
+            </div>
+        </section>
+
+        <script>
+            $(document).ready(function() {
+                const linkSpan = document.querySelectorAll('.linkSpan');
+                for(var i=0; i < linkSpan.length; i++){
+                    linkSpan[i].onclick = function (event) {
+                        window.open(event.target.getAttribute('href'), '_blank');
+                    }
+                }
+            });
+        </script>
+        <style>
+            .linkSpan {
+                text-decoration: underline;
+                cursor: pointer;
+            }
+        </style>
+
+        <footer id="footer"></footer>
+    </body>
+</html>
