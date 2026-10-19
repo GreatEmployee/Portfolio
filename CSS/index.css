@@ -79,8 +79,15 @@ body {
         opacity: 1;
     }
 }
-.BgCanvas {
-    animation: backgroundFade 7s;
+.backgroundCanvas {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100vh;
+    left:0px;
+    top:4vh;
+    opacity: 1;
+    /*animation: backgroundFade 7s;*/
 }
 
 #TitleDiv {
