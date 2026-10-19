@@ -6,8 +6,6 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="CSS/index.css">
     <script src="jquery.js"></script>
-    <link rel="stylesheet" href="https://pyscript.net/releases/2026.6.1/core.css" />
-    <script type="module" src="https://pyscript.net/releases/2026.6.1/core.js"></script>
     <script src="Scripts/facingCursor.js"></script>
     <script> 
         $(function(){
@@ -28,7 +26,8 @@
         <div id="cursor"></div>
         <header id="header"></header>
         <section id="presentationSection">
-            <script type="py" src="Scripts/HomePageBackground.py"></script>
+            <canvas class="backgroundCanvas"></canvas>
+            <script src="Scripts/HomePageBackground.js"></script>
             <div id="TitleDiv">
                 <img id="KyotoImage" class="FacingCursor" depthz="4" shadowIntensity="40" rotationFreedom="0.5" src="Images/KyotoTemple.jpg">
                 <div>
