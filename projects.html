@@ -20,8 +20,6 @@
         <div id="cursor"></div>
         <header id="header"></header>
 
-        <div style="height: 50vh;width: 100%;"></div>
-
         <section id="quote">
             <div>
                 <p>"</p>
@@ -35,7 +33,7 @@
                     for(var i=0; i < spanSplit.length; i++){
                         var target = spanSplit[i];
                         target.innerHTML = target.innerText.replace(/./g, "<span>$&</span>");
-
+                        target.innerHTML += "<span id='cursorType'>|</span>";
 
                         const spans = target.querySelectorAll('span');
                         for(var s=0; s < spans.length; s++){

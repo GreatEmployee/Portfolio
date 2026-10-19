@@ -4,9 +4,15 @@ strong,a {
 }
 
 #quote {
-    background-color: grey;
-    height: 50vh;
+    margin-top: 9vh;
+    background-color: rgb(
+        calc((17) * var(--dark-mode) + (211) * (1 - var(--dark-mode))),
+        calc((53) * var(--dark-mode) + (211) * (1 - var(--dark-mode))),
+        calc((39) * var(--dark-mode) + (211) * (1 - var(--dark-mode)))
+    );
+    height: 30vh;
     display: flex;
+    transition: background-color ease-in-out var(--transition-delay);
 }
 
 #quote > div {
@@ -23,16 +29,37 @@ strong,a {
     font-weight: 400;
     font-style: normal;
     font-size: 3rem;
+    color: rgb(var(--dark-color));
+    transition: color ease-in-out var(--transition-delay);
 }
 
-#quote span {
+#quote span:not(span#cursorType) {
     margin:auto;
     visibility: visible;
-    transition: visibility;
+    transition: visibility, font-size;
     transition-delay: calc( 0.5s + var(--n) * 2s);
     @starting-style {
         visibility: hidden;
-    }   
+        font-size: 0px;
+    }
+}
+
+#quote div > p:first-child, #quote div > p:last-child {
+    opacity: 1;
+    transition: opacity 1s 1s;
+    @starting-style {
+        opacity: 0;
+    }
+}
+
+@keyframes cursor-animation {
+    from {opacity: 1;}
+    49% {opacity: 1;}
+    50% {opacity: 0;}
+    99% {opacity: 0;}
+}
+#quote span#cursorType {
+    animation: cursor-animation 1s infinite;
 }
 
 #quote div > p:first-child, #quote div > p:last-child{
@@ -48,7 +75,14 @@ strong,a {
 }
 
 #quote > p {
-    margin-bottom: 0px;
+    margin: auto;
+    color: rgb(
+        calc((54) * var(--dark-mode) + (150) * (1 - var(--dark-mode))),
+        calc((110) * var(--dark-mode) + (150) * (1 - var(--dark-mode))),
+        calc((88) * var(--dark-mode) + (150) * (1 - var(--dark-mode)))
+    );
+    transform: translate(0px, 500%);
+    transition: color ease-in-out var(--transition-delay);
 }
 
 
@@ -205,12 +239,6 @@ strong,a {
     font-size: 2rem;
 }
 
-@keyframes cursor-animation {
-    from {opacity: 1;}
-    49% {opacity: 1;}
-    50% {opacity: 0;}
-    99% {opacity: 0;}
-}
 #programmation #details > strong:first-child > span:last-child {
     opacity: 1;
     font-weight: 200;
