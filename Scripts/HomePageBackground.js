@@ -49,7 +49,7 @@ const pointVelocityFactor = .3;
 const pointMaxSpeed = 100;
 const pointMinSpeedForFriction = 1;
 const pointAccelFactor = 3;
-const pointMaxAccel = 100;
+const pointMaxAccel = 20;
 
 const pointFrictionFactor = 1/300;
 
@@ -106,9 +106,9 @@ class Point {
         */
     }
 
-    updateForceWith(p, scale) {
+    updateForceWith(p, weight, size) {
         var length = Vector2.distance(this.position, p.position);
-        var force = - scale / ( scale + length**2 ); /*do not fit reality*/
+        var force = - weight * size / ( size + length**2 ); /*do not fit reality*/
 
         this.force = Vector2.add(this.force, Vector2.sub(p.position, this.position).normalize().scale(force));
     }
@@ -169,21 +169,21 @@ function draw() {
         for(var p2 = 0; p2 < points.length; p2++){
             if (p!=p2){
                 drawLine(ctx, points[p], points[p2]);
-                points[p].updateForceWith(points[p2], 10);
+                points[p].updateForceWith(points[p2], 1, 10);
             }
         }
         drawLine(ctx, points[p], cursorPosition);
-        points[p].updateForceWith(cursorPosition, 10);
+        points[p].updateForceWith(cursorPosition, 100, 1);
 
         var wall = new Point();
         wall.position.x = points[p].position.x < width/2 ? 0 : width;
         wall.position.y = points[p].position.y;
-        points[p].updateForceWith(wall, 10);
+        points[p].updateForceWith(wall, 1, 10);
         wall.position.y = points[p].position.y < height/2 ? 0 : height;
         wall.position.x = points[p].position.x;
-        points[p].updateForceWith(wall, 10);
+        points[p].updateForceWith(wall, 1, 10);
 
-        points[p].updateForceWith(new Point(width/2, height/2), 100);
+        points[p].updateForceWith(new Point(width/2, height/2), 1, 100);
 
     }
 

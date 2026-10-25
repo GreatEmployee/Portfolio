@@ -87,7 +87,7 @@ body {
     left:0px;
     top:4vh;
     opacity: 1;
-    animation: backgroundFade 9s;
+    /*animation: backgroundFade 9s;*/
 }
 
 #TitleDiv {
