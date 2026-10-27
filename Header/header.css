@@ -3,6 +3,10 @@ body {
     transition: background-color ease-in-out var(--transition-delay);
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 header {
     position: sticky;
     z-index:1;
@@ -150,3 +154,26 @@ header a:hover {
     opacity: calc(1 - var(--dark-mode));
     transform: rotate(calc( -90deg *var(--dark-mode) ));
 }
+
+/* --- TEMP --- */
+
+a.Available:hover {
+    color: green;
+}
+
+a.NotAvailable:hover {
+    color: red;
+    text-decoration: line-through;
+}
+
+a.UnderConstruction:hover {
+    color: orange;
+}
+
+a.Available:hover,
+a.NotAvailable:hover,
+a.UnderConstruction:hover {
+    transition-duration: 200ms;
+}
+
+/* ------------ */

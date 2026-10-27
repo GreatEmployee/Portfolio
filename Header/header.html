@@ -2,31 +2,31 @@
     <div>
         <link rel="stylesheet" href="Header/header.css">
         <div class="menu">
-            <a href="index.html">
+            <a href="index.html" class="Available">
                 Accueil
             </a>
-            <a >
+            <a class="NotAvailable">
                 Comp&eacutetences
             </a>
-            <a href="profil.html">
+            <a class="NotAvailable">
                 A propos de moi 
             </a>
-            <a href="experiences.html">
+            <a href="experiences.html" class="UnderConstruction">
                 Exp&eacuteriences professionelles
             </a>
             <div class = 'dropdownBox'>
-                <a href="projects.html">
+                <a href="projects.html" class="UnderConstruction">
                     Projets
                 </a>
                 <div>
-                    <a href="projects.html#roboticTitle">
+                    <a href="projects.html#reverse" class="Available">
+                        Personnels
+                    </a>
+                    <a href="projects.html#namec" class="Available">
                         Robotiques
                     </a>
-                    <a href="projects.html#butTitle">
+                    <a href="projects.html#radiogonometry" class="Available">
                         BUT
-                    </a>
-                    <a href="projects.html#personalTitle">
-                        Personnels
                     </a>
                 </div>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 100 100" height="10" width="10">
@@ -35,13 +35,29 @@
                     </g>
                 </svg>
             </div>
-            <a>
+            <a class="NotAvailable">
                 Passions
             </a>
-            <a href="contact.html">
+            <a href="contact.html" class="UnderConstruction">
                 Contact
             </a>
         </div>
+        <script>
+            $(document).ready(function() {
+                setTimeout(function() {
+                    let location = document.location.href;
+                    if (location.includes('#')){
+                        document.querySelector(
+                            location.slice(
+                                location.indexOf('#')
+                            )
+                        )
+                        .scrollIntoView();
+
+                    }
+                }, 500);
+            })
+        </script>
         <div id="dark-mode-button" onclick="SwitchMode()">
             <div id="ThemesDiv">
                 <img id="moon" src="Images/Moon-Icon.svg">
