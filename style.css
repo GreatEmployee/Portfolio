@@ -1,6 +1,12 @@
+@font-face {
+font-family : "Verdana";
+src : url(https://d3syewzhvzylbl.cloudfront.net/fonts/google-fonts/verdana/regular.woff2) format('woff2');
+}
+
+
 body {
-    font-family: Inter;
-    font-weight: 600;
+    font-family: "Verdana";
+    font-weight: 400;
     font-style: normal;
     margin: 0px;
 }

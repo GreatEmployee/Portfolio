@@ -18,6 +18,11 @@ font-family : "Satisfy";
 src : url(https://d3syewzhvzylbl.cloudfront.net/fonts/google-fonts/satisfy/regular.woff2) format('woff2');
 }
 
+@font-face {
+font-family : "Changa One";
+src : url(https://d3syewzhvzylbl.cloudfront.net/fonts/google-fonts/changaone/regular.woff2) format('woff2');
+}
+
 
 html::-webkit-scrollbar {
     width: 0;
@@ -225,6 +230,10 @@ body {
 }
 #name span#initial, #name span#firstname {
     font-family : "Nothing You Could Do";
+}
+
+#name span#lastname {
+    font-family : "Changa One";
 }
 
 @keyframes nameSlider{
