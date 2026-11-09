@@ -91,45 +91,46 @@ section.experienceSection div.content > * {
 }
 
 
-div:has(> .carousel) {
-    background-color: red;
-    width: 100%;
+
+div:has( > .carousel) {
+    height: 60vh;
+}
+
+.carousel {
+    position: absolute;
+    width: 100vw;
+    transform: translate(-50vw);
+    display: flex;
     height: 60vh;
     overflow: hidden;
 }
 
-
-.carousel {
-    display: grid;
-    width: 100%;
-    justify-content: center;
-}
-
-@keyframes carouselScroll {
-    from{
-        left:100%;
-        visibility: visible;
+@keyframes CarouselScroll {
+    from {
+        transform: translate(0px);
     }
-    to{
-        left: 0px;
-        visibility: visible;
+
+    to {
+        transform: translate(-100%);
     }
+    
 }
 
-.carousel > img:first-child{
-    position: absolute;
-    height: 60vh;
-    margin: auto;
-    grid-row: 1;
-    --nbImages: 6;
-    animation: carouselScroll 1s 2s infinite;
-    animation-delay: 2s;
-    transition: left ease;
+.carousel > div {
+    height: 100%;
+    display: flex;
+    animation: CarouselScroll linear 14s infinite;
 }
 
-.carousel > :not(img:first-child){
-    visibility: hidden;
+.carousel:hover > div {
+    animation-play-state: paused;
 }
+
+.carousel > div > img {
+    margin-right: 10px;
+}
+
+
 
 .combinedImages {display: grid;}
 
